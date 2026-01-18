@@ -4,7 +4,8 @@ module top_module(
     output reg [15:0] out );
     
     always @(*) begin
-        out = '1; 	// Apostrophe Literal: used in system verilog. sets all bits to 1 regardless of the widths.
+        out = '1; 	// Apostrophe Literal: used in system verilog. sets all bits to 1 regardless of the widths. (there are other methods also)
+                    // I prefer to assign a default value to 'out' instead of default case.
         case (sel)
             0 : out = a;
             1 : out = b;

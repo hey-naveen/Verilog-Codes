@@ -14,7 +14,8 @@ module top_module(
     reg [2:0] state,  next;
   integer count;    // here integer is used to store count (range is 2^32 - 1)
   // reg [4:0] reset upon count > 31 hence, we need to more bits so we need more bits (ideally > 10) 
-    
+
+    // Digging Precedence: Ensure that if ground is true, the lemming checks dig before checking bump.
     always @(*) begin
         case(state) 
           // i like the simplicity of using ternary operator, you can use if-else also...

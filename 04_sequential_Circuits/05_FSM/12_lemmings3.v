@@ -12,7 +12,8 @@ module top_module(
     
     parameter walk_r=0, walk_l=1, fall_r=2, fall_l=3, dig_r=4, dig_l=5;
     reg [2:0] state,  next;
-    
+
+    // Digging Precedence: Ensure that if ground is true, the lemming checks dig before checking bump.
     always @(*) begin
         case(state) 
           // i like the simplicity of using ternary operator, you can use if-else also...
